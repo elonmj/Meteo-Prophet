@@ -48,4 +48,5 @@ Ce qui suit décrit un processus, celui que nous empreunterons pour mener à bie
 
 # *Signataires*: (J'approuve le processus et m'engage à faire preuve de discipline dans son suivi)
 - Elonm AHOUANYE
+- J'ai lu et approuvé - [Ariel BOKO]
 - ...
