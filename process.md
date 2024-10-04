@@ -50,3 +50,4 @@ Ce qui suit décrit un processus, celui que nous empreunterons pour mener à bie
 - Elonm AHOUANYE
 - J'ai lu et approuvé - [Ariel BOKO]
 - J'ai lu et approuvé - .[Judicaël Karol DOBOEVI].
+- J'ai lu et approuvé - [Ursus ghd]
