@@ -1,5 +1,3 @@
-
-
 # Système de Prédiction Météorologique pour le Bénin
 
 ## 1. Objectif du Projet
@@ -118,6 +116,25 @@ Collecter des données pour au moins 5 points représentatifs du Bénin :
 ### 7.2. Fonctionnalités Clés
 
 - Carte interactive permettant la sélection précise d'un emplacement
+  ```javascript
+  // Exemple de configuration Leaflet pour limiter la carte au Bénin
+  const map = L.map('map').setView([9.3077, 2.3158], 7); // Coordonnées centrales du Bénin
+
+  // Définir les limites de la carte (bounding box du Bénin)
+  const bounds = [
+    [6.1425, 0.7723], // Sud-Ouest
+    [12.4183, 3.8433] // Nord-Est
+  ];
+  map.setMaxBounds(bounds);
+  map.fitBounds(bounds);
+
+  // Ajouter une couche de tuiles (tiles layer)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 13,
+    minZoom: 7,
+    bounds: bounds
+  }).addTo(map);
+  ```
 - Géolocalisation (si autorisée par l'utilisateur)
 - Affichage des prévisions sous forme de graphiques et tableaux
 - Comparaison des prévisions pour différents emplacements

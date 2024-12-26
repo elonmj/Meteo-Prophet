@@ -29,6 +29,7 @@ export const WeatherMap = ({ onLocationSelect, selectedLocation }: WeatherMapPro
         zoom={7}
         className="h-full w-full"
         zoomControl={false}
+        maxBounds={[[6.1425, 0.7723], [12.4183, 3.8433]]} // Limites de la carte (bounding box du Bénin)
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
