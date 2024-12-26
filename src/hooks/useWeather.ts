@@ -3,12 +3,15 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { weatherService } from '@/core/services/api';
+import { getMockWeatherData } from '@/core/mocks/weather';
 import type { 
   WeatherData, 
   WeatherError, 
   WeatherQueryParams, 
   ForecastResponse as WeatherForecastResponse 
 } from '@/core/types/weather';
+
+const isDev = process.env.NODE_ENV === 'development';
 
 export function useWeather(latitude: number, longitude: number) {
   const params: WeatherQueryParams = {
@@ -21,6 +24,10 @@ export function useWeather(latitude: number, longitude: number) {
   return useQuery<WeatherData, WeatherError>({
     queryKey: ['weather', params],
     queryFn: async () => {
+      if (isDev) {
+        // Utiliser des données mockées en développement
+        return getMockWeatherData('cotonou');
+      }
       try {
         const response = await axios.get<WeatherForecastResponse>('/api/weather', { params });
         return response.data.data; // Accès aux données via data.data car ForecastResponse contient { success, data, message? }
